@@ -31,6 +31,8 @@ public class ArrayPlay {
 	/**
 	 * Declares an array of size 10, generates random number and assigns it to
 	 * first element in array, then prints all
+	 * @param none
+	 * @return none
 	 */
 	public void printRandomArray() {
 		//set arr size to 10
