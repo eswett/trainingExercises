@@ -21,7 +21,7 @@ package com.swett.intro2;
  ****************************************************************************/
 public class ArrayPlay {
 	
-	int [] arr;
+	private int [] arr;
 	
 	public static void main(String[] args) {
 		ArrayPlay ap = new ArrayPlay();
