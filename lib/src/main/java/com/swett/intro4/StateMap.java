@@ -2,7 +2,6 @@ package com.swett.intro4;
 
 import java.util.*;
 
-
 /****************************************************************************
  * <b>Title:</b> StateMap.java
  * <b>Project:</b> Homework from Intro to Prog4
@@ -20,11 +19,19 @@ import java.util.*;
  * 
  ****************************************************************************/
 public class StateMap {
-    //hashmap used to build original, unordered map
+    // hashmap used to build original, unordered map
     private Map<String, String> stateMap = new HashMap<>();
+    
+    public void printMap(Map<String, String> map) {
+        for(Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": "+ entry.getValue());
+        }
+        System.out.println('\n');
+    }
 
     /**
-     * Function that add's state names mapped to their state code 
+     * Function that add's state names mapped to their state code
+     * 
      * @return Map<String, String>
      */
     private Map<String, String> buildMap() {
@@ -82,9 +89,10 @@ public class StateMap {
         stateMap.put("Wyoming", "WY");
         return stateMap;
     }
-    
+
     /**
      * Takes map and returns it as a treemap
+     * 
      * @param map
      * @return
      */
@@ -92,20 +100,27 @@ public class StateMap {
         return new TreeMap<>(map).descendingMap();
     }
 
-/**
- * 
- * @param args
- */
+    /**
+     * Entry point for state map manipulation
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
-        StateMap sm = new StateMap();
-        Map<String, String> newMap = sm.buildMap();
+        StateMap sm = new StateMap(); // declare state map object
+        Map<String, String> newMap = sm.buildMap();// build the map
+        
+        System.out.println("We will first print the unordered map:" + '\n');
+        sm.printMap(newMap); //print unordered map
 
+        // a tree map implements the map interface and has ordering functionality
+        // so by passing a map into TreeMap's constructor, it returns a new map with
+        // natural ordering.
         Map<String, String> inorderMap = new TreeMap<>(newMap);
-        System.out.println(newMap);
-        System.out.println(inorderMap);
-        System.out.println(sm.reverseMap(inorderMap));
 
+        System.out.println("We will now print the map in its natural ordering:" + '\n');
+        sm.printMap(inorderMap);
 
-
+        System.out.println("And finally we will print the map in reverse order:" + '\n');
+        sm.printMap(sm.reverseMap(inorderMap));
     }
 }
