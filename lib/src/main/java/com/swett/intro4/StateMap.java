@@ -120,6 +120,7 @@ public class StateMap {
         System.out.println("We will now print the map in its natural ordering:" + '\n');
         sm.printMap(inorderMap);
 
+        //call function to reverse the map in the print Function
         System.out.println("And finally we will print the map in reverse order:" + '\n');
         sm.printMap(sm.reverseMap(inorderMap));
     }
