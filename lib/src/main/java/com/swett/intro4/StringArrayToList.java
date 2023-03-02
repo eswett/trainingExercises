@@ -21,6 +21,8 @@ import java.util.List;
  * 
  ****************************************************************************/
 
+
+
 public class StringArrayToList {
     //initialize a string array
     private String[] stringArr = {"boy", "howdy", "did", "you", "see", "them", "yankees", "play"};
@@ -28,6 +30,10 @@ public class StringArrayToList {
     //initialize a list that accepts string type
     //add every element of the string array to the list
 
+    /** 
+    * This function takes a string array as an argument, adds every element
+    * to a list
+    */
     public List<String> converter(String[] arr) {
         for(String st: arr) {
             lst.add(st);
