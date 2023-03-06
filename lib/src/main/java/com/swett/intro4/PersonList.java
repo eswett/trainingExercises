@@ -96,7 +96,6 @@ public class PersonList {
         System.out.println(System.lineSeparator());
     }
 
-
     /**
      * Entry point into program that initializes PersonList object to use methods within it
      * @param args
