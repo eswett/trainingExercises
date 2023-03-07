@@ -1,7 +1,46 @@
-package com.swett.song;
+package com.swett.jukebox;
 
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+
+
+/****************************************************************************
+ * <b>Title:</b> JukeBoxStreams.java
+ * <b>Project:</b> Exercise work from Head First Java
+ * <b>Description:</b> Streams in java
+ * 
+ * 
+ * 
+ * <b>Copyright:</b> Copyright (c) 2023
+ * <b>Company:</b> Silicon Mountain Technologies
+ * 
+ * @author Evan Swett
+ * @version 3.0
+ * @since 03/06/2023
+ *        <b>updates:</b>
+ * 
+ ****************************************************************************/
+public class JukeBoxStreams {
+    public static void main(String[] args) {
+        List<Song> songs = new Songs().getSongs(); 
+        List<Song> rockSongs = songs.stream()
+                                    .filter(song -> song.getGenre().contains("Rock"))
+                                    .collect(Collectors.toList());
+        System.out.println("\nHere is the list of songs in the 'rock' genre: ");
+        System.out.println(rockSongs);
+
+        System.out.println("\nNow here is a list of all of the genres in the jukebox: ");
+        List<String> genreList = songs.stream()
+                                      .map(song -> song.getGenre())
+                                      .distinct() //this got rid of duplicates
+                                      .collect(Collectors.toList());
+        System.out.println(genreList);
+
+    }
+}
 
 class Songs {
     public List<Song> getSongs() {
@@ -31,7 +70,7 @@ class Songs {
     }
 }
 
-public class Song {
+class Song {
     private final String title_;
     private final String artist_;
     private final String genre_;
@@ -75,8 +114,8 @@ public class Song {
     }
 
     public String toString() {
-        return new String(title_ + ", by " + artist_ + " belongs to the " + genre_ + 
-        " genre. It came out in " + year_ + ", and has been played " + timesPlayed_ + " times.");
+        return new String(title_ + ", by " + artist_ + " belongs to the " + genre_ +
+                " genre. It came out in " + year_ + ", and has been played " + timesPlayed_ + " times");
     }
 }
 // Practice f
