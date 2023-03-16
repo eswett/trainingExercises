@@ -47,16 +47,13 @@ public class FileManipulator {
         // the string to read to
         String fileData = "";
 
-        try {
-
-            FileReader reader = new FileReader(inputFile);
+        try (FileReader reader = new FileReader(inputFile);) { //a "try-with-resources" block closes the stream automatically, compare to the writeFile method that manually closes
+            
             int c;
 
             while ((c = reader.read()) != -1) {
                 fileData += (char) c; // this must be casted to a char from its ascii value
             }
-            reader.close();
-
         } catch (Exception e) {
             System.out.println("The file doesnt exist!");
             e.printStackTrace();
