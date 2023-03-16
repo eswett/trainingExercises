@@ -4,6 +4,24 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
+
+
+/****************************************************************************
+ * <b>Title:</b> SimpleAnimation.java
+ * <b>Project:</b> Project from Heads Up Chaper 14
+ * <b>Description:</b> Simple Animation
+ * 
+ * This was just to experiement with making a gui and
+ * 
+ * <b>Copyright:</b> Copyright (c) 2023
+ * <b>Company:</b> Silicon Mountain Technologies
+ * 
+ * @author Evan Swett
+ * @version 3.0
+ * @since 02/28/2023
+ *        <b>updates:</b>
+ * 
+ ****************************************************************************/
 public class SimpleAnimation {
     private int xPos = 70;
     private int yPos = 70;
