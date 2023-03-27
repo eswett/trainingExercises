@@ -23,11 +23,10 @@ import java.net.Socket;
 public class HTMLGrabber {
 
     //I use a stringbuilder rather than adding to a string to save space
-    private StringBuilder stringbuilder;
+    private StringBuilder html = new StringBuilder();
 
     //127.0.0.1 is the same as "localhost"
-    //I chose port 81 and set up my apache server 
-    //to listen to that port
+    //I chose port 81 and set up my apache server to listen to that port
     private final String HOST = "127.0.0.1";
     private final int PORT_NUMBER = 81;
 
@@ -55,20 +54,19 @@ public class HTMLGrabber {
             String inData = null;
             
             while((inData = in.readLine()) != null) {
-                stringbuilder.append(inData).append("\n");
+                html.append(inData).append("\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return stringbuilder.toString();
+        return html.toString();
     }
 
     /**
      * Driver function
      */
     public void be() {
-        stringbuilder = new StringBuilder();
         String webpageHTML = getHTML(HOST, PORT_NUMBER);
         System.out.println(webpageHTML);
     }
