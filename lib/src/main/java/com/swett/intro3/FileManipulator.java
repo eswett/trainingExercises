@@ -63,7 +63,7 @@ public class FileManipulator {
 
     /**
      * This method makes a new file called "output.txt," opens it as a stream, and
-     * then writes to it
+     * then writeFiles to it
      * 
      * @param data
      */

@@ -27,7 +27,7 @@ public class HTMLGrabber {
 
     //127.0.0.1 is the same as "localhost"
     //I chose port 81 and set up my apache server to listen to that port
-    private final String HOST = "127.0.0.1";
+    private final String HOST = "smt-stage.qa.siliconmtn.com";
     private final int PORT_NUMBER = 81;
 
     /**
